@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head> 
+   <meta charset="utf-8">
+	<title>happigo--购物车</title>
+	 <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+      <link rel="stylesheet" type="text/css" href="css/shopcar.css">
+</head>
+<body>
+<!-- 头部 -->
+<div class="append_head"></div>
+<!-- 商品信息部分 -->
+<div class="container">
+   <div class="cart">
+       
+        <div class="cart-main">          
+          <div class="cart-main-title">
+            <ul class="clearfix">
+              <li class="td td-checkbox">
+                <input type="checkbox" class="select-all-btn"/>
+                <span>全选</span>
+              </li>
+              <li class="td td-gname">
+                <div class="td-inner">商品</div>
+              </li>
+              <li class="td td-gstyle">商品信息</li>
+              <li class="td td-gprice">单价</li>
+              <li class="td td-gamount">数量</li>
+              <li class="td td-gmoney">金额</li>
+              <li class="td td-option">操作</li>
+            </ul>
+          </div>
+          <!--商品区-->
+          <div class="cart-main-content">
+            
+
+          </div>
+          <!--操作区-->
+          <div class="cart-option clearfix">
+            <div class="options clearfix">
+              <div class="options-item select-all">
+                <input type="checkbox" class="select-all-btn">
+                <span>全选</span>
+              </div>
+              <div class="options-item delete">
+                <a href="#">删除</a>
+              </div>
+            </div>
+            <div class="cart-info clearfix">
+              <div class="info-item goods-amount">
+                已选商品<span class="user-goods-amount">0</span>件
+              </div>
+              <div class="info-item goods-money">
+                合计：不含运费<span class="user-goods-money">0.00</span>
+              </div>
+              <div class="info-item go-pay">结算</div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+<div class="right_box"></div>
+<div class="append_foot"></div>
+    <script type="text/html" id="cart-list">
+			<!-- cart  data -->
+			{{each cart as v k}}
+				<ul class="cart-goods-item clearfix" data-id="{{k}}">
+					<li class="td td-checkbox">
+						<input type="checkbox" />
+					</li>
+					<li class="td td-gname">
+						<div class="td-inner clearfix">
+							<div class="goods-img">
+								<img src="{{data.goods_pic_small}}">
+							</div>
+							<div class="goods-name">
+								<a href="#">{{data.goods_name}}</a>
+							</div>
+						</div>
+					</li>
+					<li class="td td-gstyle">
+						<div class="gcolor">
+							<span class="">尺码:</span>
+							<span class="color-type">{{data.size[k].type}}</span>
+						</div>
+					</li>
+					<li class="td td-gprice">
+						<span>￥</span>
+						<span class="goods-price">{{data.size[k].sale_price}}</span>
+					</li>
+					<li class="td td-gamount">
+						<div class="td-amount-wrapper" data-stock="{{data.size[k].stock}}">
+							<span class="amount-option amount-decrease">-</span>
+							<input class="amount-option amount-input" type="text" value="{{v.amount}}">
+							<span class="amount-option amount-increase">+</span>
+						</div>
+					</li>
+					<li class="td td-gmoney">
+						<span>￥</span>
+						<span class="goods-money">{{data.size[k].sale_price * v.amount}}</span>
+					</li>
+					<li class="td td-option">
+						<a href="#" class="delete">删除</a>
+					</li>
+				</ul>
+			{{/each}}
+
+		</script>
+		<script data-main="js/js/shopcar.js" src="require.js" defer async="true"></script> 
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+	<title></title>
+	 <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+     <link rel="stylesheet" type="text/css" href="css/detail.css">
+</head>
+<body>
+<!-- 头部部分 -->
+<div class="append_head"></div>
+<!-- 商品详情部分 -->
+<div class="container clearfix">
+   <div class="goods-detail" data-gid="10001">
+      <div class="con_top">
+        <p><a href="###">首页&gt;</a><a href="###">服装配饰&gt;</a><a href="###">女士服装&gt;</a><a href="###">自由森林女士轻薄休闲外套超值组皮肤衣防晒衣 套组 M</a></p>
+      </div>
+     <div class="left">
+       <div class="glass-main">
+        <!-- 中图  滤镜 -->
+            <div class="middle">
+              <img src="imgs/gpic1_large.jpg">
+              <div class="filter"></div>
+            </div>
+        <!-- 大图 -->
+           <div class="large">
+            <img src="imgs/gpic1_large.jpg">
+           </div>
+       </div>
+      <!-- 图片选择区域 -->
+      <div class="glass-slide">
+        <span class="arrow arrow-left"></span>
+        <span class="arrow arrow-right"></span>
+        <div class="slide-main">
+          <div class="img-wrap">
+            <img class="active" src="imgs/gpic1_small.jpg" data-url="imgs/gpic1_large.jpg">
+            <img src="imgs/gpic2_small.jpg" data-url="imgs/gpic2_large.jpg">
+            <img src="imgs/gpic3_small.jpg" data-url="imgs/gpic3_large.jpg">
+            <img src="imgs/gpic4_small.jpg" data-url="imgs/gpic4_large.jpg">
+            <img src="imgs/gpic5_small.jpg" data-url="imgs/gpic5_large.jpg">
+             <img src="imgs/gpic2_small.jpg" data-url="imgs/gpic2_large.jpg">
+            <img src="imgs/gpic3_small.jpg" data-url="imgs/gpic3_large.jpg">
+            <img src="imgs/gpic4_small.jpg" data-url="imgs/gpic4_large.jpg">
+            <img src="imgs/gpic5_small.jpg" data-url="imgs/gpic5_large.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+         <div class="goods_title">
+            <h1>[2件外套赠T恤]自由森林女士轻薄休闲外套超值组皮肤衣防晒衣 套组 M</h1>
+            <h2>轻薄/透气/防晒 便携收纳</h2>
+            <div class="price">
+              <span class="title">快乐价</span>
+              <span class="price_sign">￥</span><span class="goods_price">298.00</span>
+              <span class="price_before">￥599.00</span>
+            </div>
+           <dl><dt>满减</dt><dd>单笔订单满699元，立减100元</dd></dl>
+           <dl><dt>满减</dt><dd>单笔订单满399元，立减600元</dd></dl>
+           <dl><dt>满减</dt><dd>单笔订单满199元，立减30元</dd></dl>
+           <div class="pop">
+             <span>运费</span><span>包邮</span>
+           </div>
+         </div>
+         <div class="goods_size color">
+            <div class="goods_item">
+               <span class="pop_tit">颜色</span>
+               <ul>
+                 <li class="select_list"><a>套组</a> </li>
+               </ul>
+            </div>
+            <div class="goods_item size">
+               <span class="pop_tit">尺码</span>
+               <ul class="size_con">
+                 <li class="select_list" data-id="1000101"><a href="href=javascript:;">M</a></li>
+              
+               </ul>
+            </div>
+             <div class="goods_item amount">
+               <span class="pop_tit">数量</span>
+               <div class="amount_item">
+                   <a class="dec">-</a>
+                   <input type="text" class="text" value="1">
+                   <a class="inc">+</a>
+                   <span>库存<i class="num">99</i>件</span>
+               </div>
+            </div>
+            <div class="goods_item">
+               <a class="btn buynow" href="shopcar.html">立即购买</a>
+               <a class="btn addcar">加入购物车</a>
+            </div>
+         </div>
+      </div>
+
+   </div>
+</div>
+<div class="append_foot"></div>
+    <script id="type-list" type="text/html">
+      {{each size as v k}}
+        <li class="select_list" data-id="{{k}}">
+          <a href="javascript:;">{{v.type}}</a>
+        </li>
+      {{/each}}
+    </script>
+    <script data-main="js/js/detail.js" src="require.js" defer async="true"></script>
+</body>
+</html>
