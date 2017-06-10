@@ -5,6 +5,7 @@ require(['../config'],function(){
 
 	//加载需要用到的模块
 	require(['jquery',"template","jquery.cookie"],function($,template,jc){
+		//把头部和尾部的文件用load引入 
         $('.append_head').load('../../common.html .header');
         $('.append_foot').load('../../common.html .footer');
 		/*放大镜部分*/
@@ -15,19 +16,27 @@ require(['../config'],function(){
 			var midImg = $('.middle img');
 			var largeImg = $('.large img');
 
-			//获取盒子距离屏幕左边缘的距离
-			var ol = leftbox.offset().left;
-			var ot = leftbox.offset().top;
+			//获取盒子距离屏幕左边缘上边缘的距离
+			/*var ol = leftbox.offset().left;
+			var ot = leftbox.offset().top;*/
+			/*BUG原因：
+			由于使用了load加载头部尾部公共部分，直接在没有触发mousemove事件时候获取的offset().top不准确。在页面加载完成之后再去获取。则没有问题*/
 
+				
 			//鼠标在中型盒子上移动
 			midWrap.mousemove(function(e){
+			//获取盒子距离屏幕左边缘上边缘的距离
+			var ol = leftbox.offset().left;
+			var ot = leftbox.offset().top;
+			//console.log(ol,ot);
 				//滤镜的位置
 				var l = e.pageX - ol - 100;
 				var t = e.pageY - ot - 100;
+				console.log(l,t);
 		           		//边界处理
 				l = l < 0 ? 0 : (l > 180? 180 : l);
 				t = t < 0 ? 0 : (t > 180? 180 : t);
-                //console.log(l,t);
+                
 				//更改滤镜位置
 			filter.css({
 			            "left":l,
